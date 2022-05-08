@@ -7,7 +7,7 @@ export class PopupService {
 
   constructor() { }
 
-  makeCapitalPopup(data: any): string {     
+  makeCapitalPopup(data: any): string {
     return `` +
   `<div>Capital: ${ data.name }</div>` +
   `<div>State: ${ data.state }</div>` +

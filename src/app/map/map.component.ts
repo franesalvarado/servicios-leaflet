@@ -36,12 +36,10 @@ export class MapComponent implements AfterViewInit {
       minZoom: 3,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
-  
+
     tiles.addTo(this.map);
   }
 
-
-  
   constructor(private markerService: MarkerService) { }
 
   ngAfterViewInit(): void {
@@ -49,10 +47,6 @@ export class MapComponent implements AfterViewInit {
     this.markerService.makeCapitalMarkers(this.map);
     //this.markerService.makeCapitalCircleMarkers(this.map);
 
-  }
-
-  markerOnClick(e:any){
-    console.log(e.latlng.lat);
   }
 
 }

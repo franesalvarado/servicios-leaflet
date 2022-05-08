@@ -5,8 +5,8 @@ import { MapComponent } from './map/map.component';
 import { PointDetailsComponent } from './point-details/point-details.component';
 
 const routes: Routes = [
-  { path: '', component: MapComponent },  
-  { path: 'details/:id', component: PointDetailsComponent },
+  { path: '', component: MapComponent },
+  { path: 'details', component: PointDetailsComponent },
 
 ];
 

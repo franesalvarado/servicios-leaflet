@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as L from 'leaflet';
 import { PopupService } from './popup.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,12 @@ export class MarkerService {
   capitals: string = '/assets/data/usa-capitals.geojson';
 
   constructor(private http: HttpClient,
-    private popupService: PopupService
+    private popupService: PopupService,
+    private route: ActivatedRoute,
+    private router: Router
     ) {
   }
-  
+
   static scaledRadius(val: number, maxVal: number): number {
     return 20 * (val / maxVal);
   }
@@ -27,7 +30,7 @@ export class MarkerService {
         const marker = L.marker([lat, lon], {
         }).on('click', this.markerOnClick.bind(this, c.properties));
         // marker.bindPopup(this.popupService.makeCapitalPopup(c.properties));
-        
+
         marker.addTo(map);
       }
     });
@@ -51,8 +54,9 @@ export class MarkerService {
     });
   }
 
-  markerOnClick(e: any, c:any)
-  {
-    alert("hi. you clicked the marker at " + e.name);
+  markerOnClick(e: any, c:any){
+    console.log(e);
+    console.log(c);
+    this.router.navigate(['details']);
   }
 }
