@@ -1,21 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 import { MarkerService } from '../service/marker.service';
-
-const iconRetinaUrl = 'assets/marker-icon-2x.png';
-const iconUrl = 'assets/marker-icon.png';
-const shadowUrl = 'assets/marker-shadow.png';
-const iconDefault = L.icon({
-  iconRetinaUrl,
-  iconUrl,
-  shadowUrl,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  tooltipAnchor: [16, -28],
-  shadowSize: [41, 41]
-});
-L.Marker.prototype.options.icon = iconDefault;
+import { ShapeService } from '../service/shape.service';
 
 @Component({
   selector: 'app-map',
@@ -24,11 +10,30 @@ L.Marker.prototype.options.icon = iconDefault;
 })
 export class MapComponent implements AfterViewInit {
   private map: any;
+  private calles: any;
 
+  sumideroChecked = true;
+  postesDeLuzChecked = false;
+  radioButtonOption = "1";
+
+  constructor(
+    private markerService: MarkerService,
+    private shapeService: ShapeService
+    ) { }
+
+  ngAfterViewInit(): void {
+    this.initMap();
+    this.shapeService.getStateShapes().subscribe(calles => {
+      this.calles = calles;
+      this.initCallesLayer();
+    });
+    this.markerService.makeSumiderosMakers(this.map);
+  }
+    
   private initMap(): void {
     this.map = L.map('map', {
-      center: [ 39.8282, -98.5795 ],
-      zoom: 3
+      center: [ -34.494,-58.707 ],
+      zoom: 13
     });
 
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -39,14 +44,47 @@ export class MapComponent implements AfterViewInit {
 
     tiles.addTo(this.map);
   }
-
-  constructor(private markerService: MarkerService) { }
-
-  ngAfterViewInit(): void {
-    this.initMap();
-    this.markerService.makeCapitalMarkers(this.map);
-    //this.markerService.makeCapitalCircleMarkers(this.map);
-
+  
+  private initCallesLayer() {
+    const stateLayer = L.geoJSON(this.calles, {
+      style: (feature) => ({
+        weight: 3,
+        opacity: 0.5,
+        color: '#008f68',
+        fillOpacity: 0.2,
+        fillColor: '#6DB65B'
+      })
+    });
+    this.map.addLayer(stateLayer);
   }
 
+  statusOfWork(e: any){
+    this.markerService.customClearLayers(this.map)
+    switch (this.radioButtonOption) {
+      case "1":
+        if(this.sumideroChecked){
+          this.markerService.makeSumiderosMakers(this.map);
+        }
+        if(this.postesDeLuzChecked){
+          this.markerService.makePosteDeLuzMakers(this.map);
+        }
+        break;
+      case "2":
+        if(this.sumideroChecked){
+          this.markerService.makeSumiderosToComplete(this.map);
+        }
+        if(this.postesDeLuzChecked){
+          this.markerService.makePosteDeLuzToComplete(this.map);
+        }
+        break;
+      case "3":
+        if(this.sumideroChecked){
+          this.markerService.makeSumiderosCompleted(this.map);
+        }
+        if(this.postesDeLuzChecked){
+          this.markerService.makePosteDeLuzCompleted(this.map);
+        }
+        break;
+     }
+  }
 }

@@ -1,0 +1,95 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointPosteDeLuz",
+          "coordinates": [
+            -58.7047077,
+            -34.4884324
+          ]
+        },
+        "properties": {
+          "coordinador": "Roberto Ruiz",
+          "estadoOriginal": "No funciona",
+          "solucionado": false
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointPosteDeLuz",
+          "coordinates": [
+            -58.674758,
+            -34.515577
+          ]
+        },
+        "properties": {
+          "coordinador": "Marcos Gigena",
+          "estadoOriginal": "Peligro de caida",
+          "solucionado": true
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointPosteDeLuz",
+          "coordinates": [
+            -58.674691,
+            -34.515562
+          ]
+        },
+        "properties": {
+          "coordinador": "Lautaro Martinez",
+          "estadoOriginal": "Sin iluminacion",
+          "solucionado": false
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointPosteDeLuz",
+          "coordinates": [
+            -58.701398,
+            -34.518917
+          ]
+        },
+        "properties": {
+          "coordinador": "Ezequiel Martinez",
+          "estadoOriginal": "Peligro de caida",
+          "solucionado": false
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointPosteDeLuz",
+          "coordinates": [
+            -58.725789,
+            -34.487265
+          ]
+        },
+        "properties": {
+          "coordinador": "Pablo Schdmitt",
+          "estadoOriginal": "Otro",
+          "solucionado": true
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointPosteDeLuz",
+          "coordinates": [
+            -58.722158,
+            -34.492033
+          ]
+        },
+        "properties": {
+          "coordinador": "Francisco Alvarado",
+          "estadoOriginal": "Caida de tendido electrico",
+          "solucionado": false
+        }
+      }
+    ]
+  }

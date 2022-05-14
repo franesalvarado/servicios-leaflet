@@ -1,7 +1,7 @@
 .map-container {
     position: relative;
-    height: 500px;
-    margin: 80px 30px 30px 30px;
+    height: 650px;
+    margin: 40px 30px 30px 30px;
 }
 
 .map-frame {
@@ -16,5 +16,27 @@
 .mat-card {
     width: 90%;
     margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 2%;
+}
+
+.area-radio-button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.title-radio{
+    margin-left: 16px;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 8px;
+}
+
+.area-checkbox{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.checkbox {
+    margin: 0 10px;
 }

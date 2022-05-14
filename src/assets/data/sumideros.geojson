@@ -1,0 +1,95 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointSumideros",
+          "coordinates": [
+            -58.655656,
+            -34.504025 
+          ]
+        },
+        "properties": {
+          "coordinador": "Alan",
+          "estadoOriginal": "HURTO",
+          "solucionado": false
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointSumideros",
+          "coordinates": [
+            -58.6763387,
+            -34.4799787
+          ]
+        },
+        "properties": {
+          "coordinador": "Marcos",
+          "estadoOriginal": "SUMIDERO OBSTRUIDO, TAPA ROTA",
+          "solucionado": true
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointSumideros",
+          "coordinates": [
+            -58.6764604,
+            -34.4799422
+          ]
+        },
+        "properties": {
+          "coordinador": "Leonel herrera",
+          "estadoOriginal": "FALTANTE DE TAPA",
+          "solucionado": false
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointSumideros",
+          "coordinates": [
+            -58.6785777,
+            -34.4811284
+          ]
+        },
+        "properties": {
+          "coordinador": "Eduardo Duarte ",
+          "estadoOriginal": "HURTO",
+          "solucionado": false
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointSumideros",
+          "coordinates": [
+            -58.662995,
+            -34.502148
+          ]
+        },
+        "properties": {
+          "coordinador": "Rodrigo fredes",
+          "estadoOriginal": "Sumidero roto",
+          "solucionado": true
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "PointSumideros",
+          "coordinates": [
+            -58.750190,
+            -34.489052
+          ]
+        },
+        "properties": {
+          "coordinador": "Donato fabian",
+          "estadoOriginal": "Sumedero roto y ostrulle la entrada de agua",
+          "solucionado": false
+        }
+      }
+    ]
+  }
